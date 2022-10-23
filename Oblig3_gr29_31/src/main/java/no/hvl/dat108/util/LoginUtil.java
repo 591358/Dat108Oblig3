@@ -21,7 +21,7 @@ public class LoginUtil {
 		HttpSession session = request.getSession();
 		session.setMaxInactiveInterval(MAX_INTERACTIVE_TIME);
 		
-		//Propably not a good idea to store the password in the session.
+		//Probably not a good idea to store the password in the session.
 		session.setAttribute("pass", pass);
 	}
 	/**
