@@ -3,22 +3,16 @@ package no.hvl.dat108.util;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import no.hvl.dat108.model.Shoppinglist;
-
-
 
 public class LoginUtil {
 
-	
 	//Constant for the maximum allowed inactivity time
-	private final static int MAX_INTERACTIVE_TIME = 5;
+	private final static int MAX_INTERACTIVE_TIME = 60;
 	
 	/**
 	 * This method will log in a user using a http request and a given password.
-	 * @param request
-	 * @param pass
+	 * @param request - A HttpServletRequest 
+	 * @param pass - A password entered by the user
 	 */
 	public static void logInUser(HttpServletRequest request, String pass) {
 		//good practice to log a user out, if there already is a user logged in.
@@ -26,6 +20,8 @@ public class LoginUtil {
 		logOutUSer(request.getSession());
 		HttpSession session = request.getSession();
 		session.setMaxInactiveInterval(MAX_INTERACTIVE_TIME);
+		
+		//Propably not a good idea to store the password in the session.
 		session.setAttribute("pass", pass);
 	}
 	/**

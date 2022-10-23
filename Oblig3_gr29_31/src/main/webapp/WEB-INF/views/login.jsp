@@ -7,6 +7,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Login</title>
+<style type="text/css">
+	<%@ include file="style.css" %>
+</style>
 </head>
 <body>
 	<div class="login-form-wrapper">

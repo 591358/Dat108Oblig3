@@ -7,6 +7,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Shoppinglist</title>
+<style type="text/css">
+	<%@ include file="style.css" %>
+</style>
 </head>
 <body>
 	<form action="shoppinglist" method="post">
